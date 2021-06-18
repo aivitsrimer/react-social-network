@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './MyPosts.module.css';
 import Post from './Post/Post';
 
@@ -14,8 +13,8 @@ const MyPosts = () => {
         <button>Remove</button>
       </div>
       <div className={style.posts}>
-        <Post />
-        <Post />
+        <Post message="Hi, how are you?" countLikes="14" />
+        <Post message="It`s my first post" countLikes="25" />
       </div>
     </div>
   );

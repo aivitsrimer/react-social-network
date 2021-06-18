@@ -1,4 +1,3 @@
-import React from 'react';
 import style from './Navbar.module.css';
 
 const Navbar = () => {
@@ -7,19 +6,19 @@ const Navbar = () => {
       <div className={style.item}>
         Navigation
         <br />
-        <a>Profile</a>
+        <a href="/profile">Profile</a>
       </div>
       <div className={`${style.item} ${style.active}`}>
-        <a>Messages</a>
+        <a href="/dialogs">Messages</a>
       </div>
       <div className={style.item}>
-        <a href="#3">News</a>
+        <a href="/news">News</a>
       </div>
       <div className={style.item}>
-        <a href="#4">Music</a>
+        <a href="/music">Music</a>
       </div>
       <div className={style.item}>
-        <a href="#5">Settings</a>
+        <a href="/settings">Settings</a>
       </div>
     </nav>
   );
