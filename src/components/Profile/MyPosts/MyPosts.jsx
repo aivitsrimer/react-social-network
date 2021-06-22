@@ -3,12 +3,14 @@ import Post from './Post/Post';
 
 const MyPosts = () => {
   return (
-    <div>
-      My post
+    <div className={style.postsBlock}>
+      <h3>My post</h3>
       <div>
-        <textarea name="post" id="" cols="18" rows="5">
-          Что у вас нового?
-        </textarea>
+        <div>
+          <textarea name="post" id="" cols="18" rows="5">
+            Что у вас нового?
+          </textarea>
+        </div>
         <button>Add post</button>
         <button>Remove</button>
       </div>

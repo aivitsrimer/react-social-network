@@ -1,13 +1,11 @@
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 import style from './Profile.module.css';
 
 const Profile = () => {
   return (
     <div>
-      <div>
-        <img className={style.background} src="/bg.jpeg" alt="background" />
-      </div>
-      <div>avatar + description</div>
+      <ProfileInfo />
       <MyPosts />
     </div>
   );
