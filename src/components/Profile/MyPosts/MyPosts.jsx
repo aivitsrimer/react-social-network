@@ -1,13 +1,9 @@
 import style from './MyPosts.module.css';
 import Post from './Post/Post';
 
-const MyPosts = () => {
-  let postsData = [
-    { id: 1, message: 'Hi, how are you?', countLikes: '14' },
-    { id: 2, message: 'It`s my first post', countLikes: '25' },
-  ];
+const MyPosts = (props) => {
 
-  let postsElements = postsData.map((post) => (
+  let postsElements = props.postsData.map((post) => (
     <Post message={post.message} countLikes={post.countLikes} />
   ));
 
