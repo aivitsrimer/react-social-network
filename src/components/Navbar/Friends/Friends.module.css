@@ -1,0 +1,23 @@
+.friendsBlock {
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.friends img {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+.friends .link {
+    display: flex;
+    flex-flow: column nowrap;
+}
+.friends {
+     display: flex;
+    justify-content: space-between;
+
+ }
