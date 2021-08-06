@@ -1,7 +1,7 @@
 import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import style from './Profile.module.css';
-import {updateNewPostText} from "../../redux/state";
+import store from "../../redux/state";
 
 const Profile = (props) => {
   return (
@@ -10,7 +10,7 @@ const Profile = (props) => {
       <MyPosts postsData={props.profilePage.postsData}
                newPostText={props.profilePage.newPostText}
                addPost={props.addPost}
-               updateNewPostText={updateNewPostText}/>
+               updateNewPostText={props.updateNewPostText}/>
     </div>
   );
 };
