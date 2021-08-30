@@ -2,27 +2,30 @@ import style from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
 import React from "react";
-import {addMessageCreator, updateNewMessageTextCreator} from "../../redux/state";
+import {sendMessageCreator, updateNewMessageTextCreator} from "../../redux/state";
 
 const Dialogs = (props) => {
-  let dialogElements = props.dialogsPage.dialogsData.map((dialog) => (
+    let state = props.store.getState().dialogsPage;
+
+  let dialogElements = state.dialogsData.map((dialog) => (
     <DialogItem name={dialog.name} id={dialog.id} />
   ));
-  let messagesElements = props.dialogsPage.messagesData.map((message) => (
+  let messagesElements = state.messagesData.map((message) => (
       <Message message={message.message} />));
 
-  let newMessageElement = React.createRef();
+  let newMessageElement = state.newMessageText;
 
-  let addMessage = () => {
-      props.dispatch(addMessageCreator());
+  let onSendMessage = () => {
+      props.dispatch(sendMessageCreator());
   };
 
-  let onMessageChange = () => {
-      let text = newMessageElement.current.value;
-      props.dispatch(updateNewMessageTextCreator(text));
+  let onMessageChange = (event) => {
+      // let text = newMessageElement.current.value;
+      let newText = event.target.value;
+      props.dispatch(updateNewMessageTextCreator(newText));
   };
 
-  console.log(props.dialogsPage.newMessageText)
+  console.log(state.newMessageText)
 
   return (
     <div className={style.dialogs}>
@@ -33,10 +36,9 @@ const Dialogs = (props) => {
           </div>
           <div className={style.sendMessage}>
               <textarea onChange={ onMessageChange }
-                        ref={newMessageElement}
-                        value={props.dialogsPage.newMessageText}
+                        value={newMessageElement}
                         cols="20" rows="5"/>
-              <button onClick={ addMessage }>Send</button>
+              <button onClick={ onSendMessage }>Send</button>
           </div>
       </div>
     </div>
