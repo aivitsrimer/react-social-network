@@ -19,12 +19,9 @@ const Dialogs = (props) => {
     };
 
     let onMessageChange = (event) => {
-        // let text = newMessageElement.current.value;
         let newText = event.target.value;
         props.updateNewMessageText(newText);
     };
-
-  console.log(state.newMessageText)
 
   return (
     <div className={style.dialogs}>
