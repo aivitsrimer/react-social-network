@@ -6,23 +6,23 @@ import React from "react";
 const Dialogs = (props) => {
     let state = props.dialogsPage;
 
-  let dialogElements = state.dialogsData.map((dialog) => (
-    <DialogItem name={dialog.name} id={dialog.id} />
-  ));
-  let messagesElements = state.messagesData.map((message) => (
-      <Message message={message.message} />));
+    let dialogElements = state.dialogsData.map((dialog) => (
+        <DialogItem name={dialog.name} id={dialog.id}/>
+    ));
+    let messagesElements = state.messagesData.map((message) => (
+        <Message message={message.message}/>));
 
-  let newMessageElement = state.newMessageText;
+    let newMessageElement = state.newMessageText;
 
-  let onSendMessage = () => {
-      props.sendMessage();
-  };
+    let onSendMessage = () => {
+        props.sendMessage();
+    };
 
-  let onMessageChange = (event) => {
-      // let text = newMessageElement.current.value;
-      let newText = event.target.value;
-      props.updateNewMessageText(newText);
-  };
+    let onMessageChange = (event) => {
+        // let text = newMessageElement.current.value;
+        let newText = event.target.value;
+        props.updateNewMessageText(newText);
+    };
 
   console.log(state.newMessageText)
 
