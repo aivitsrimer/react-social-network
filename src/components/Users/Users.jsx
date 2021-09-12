@@ -2,11 +2,9 @@ import styles from './user.module.css';
 import axios from "axios";
 
 let Users = (props) => {
-    const defaultPhoto = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/768px-Circle-icons-profile.svg.png';
-
     if (!props.users.length) {
 
-        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
+        axios.get("https://social-network.samuraijs.com/api/1.0/users?term=test").then(response => {
             props.setUsers(response.data.items);
         });
         return <div>loading..</div>;
@@ -17,7 +15,7 @@ let Users = (props) => {
             props.users.map( user => <div key={user.id}>
                 <span>
                     <div>
-                        <img src={user?.photos?.small ?? defaultPhoto} className={styles.userPhoto} alt="photo"/>
+                        <img src={user?.photos?.small ?? props.defaultPhoto} className={styles.userPhoto} alt="userPhoto"/>
                     </div>
                     <div>
                         { user.followed

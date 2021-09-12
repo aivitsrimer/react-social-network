@@ -5,6 +5,7 @@ import {followActionCreator, setUsersActionCreator, unfollowActionCreator} from 
 let mapStateToProps = (state) => {
     return {
         users: state.usersPage.users,
+        defaultPhoto: state.usersPage.defaultPhoto
     }
 };
 

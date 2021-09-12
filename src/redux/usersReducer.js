@@ -1,9 +1,12 @@
+import userPhoto from '../assets/images/userPhoto.png';
+
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users: [],
+    defaultPhoto: userPhoto,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -39,8 +42,7 @@ const usersReducer = (state = initialState, action) => {
 };
 
 export const followActionCreator = (userId) => ({type: FOLLOW, userId: userId});
-export const unfollowActionCreator= (userId) =>
-    ({type: UNFOLLOW, userId: userId});
+export const unfollowActionCreator = (userId) => ({type: UNFOLLOW, userId: userId});
 export const setUsersActionCreator = (users) => ({type: SET_USERS, users});
 
 export default usersReducer;
